@@ -10,55 +10,56 @@ struct date
     int month;
     int year;
 };
-struct details
+typedef struct details
 {
-    char name[20];
+    char name[MAX_SIZE];
     float price;
     int code;
     int qty;
     struct date mfg;
-};
+} Det;
 
-struct details *initialize_stock(int item_numbers)
+Det *item;
+int item_numbers;
+void initialize_stock()
 {
-    struct details *item = (struct details*)malloc(item_numbers * sizeof(struct details));
+    printf("\nEnter the number of items to initialize\n");
+    scanf("%d", &item_numbers);
+    item = (Det *)malloc(item_numbers * sizeof(Det));
     int i;
-    for(i = 0; i < item_numbers; i++)
+    for (i = 0; i < item_numbers; i++)
     {
-        fflush(stdin);
+        fflush(stdout);
         printf("Item name: \n");
         scanf("%s", item[i].name);
-        fflush(stdin);
+        fflush(stdout);
         printf("Item code: \n");
         scanf("%d", &item[i].code);
-        fflush(stdin);
+        fflush(stdout);
         printf("Quantity: \n");
         scanf("%d", &item[i].qty);
-        fflush(stdin);
+        fflush(stdout);
         printf("price: \n");
         scanf("%f", &item[i].price);
-        fflush(stdin);
+        fflush(stdout);
         printf("Manufacturing date(dd-mm-yyyy): \n");
         scanf("%d-%d-%d", &item[i].mfg.day,
-            &item[i].mfg.month, &item[i].mfg.year);  
+              &item[i].mfg.month, &item[i].mfg.year);
     }
-
-    return item;
 }
 
-
-void display_stock(struct details *item, int items_number)
+void display_stock()
 {
     int i;
-    printf("             *****  INVENTORY ***** \n");
+    printf("                      *****  INVENTORY ***** \n");
     printf("------------------------------------------------------------------\n");
-    printf(" S.N.|    NAME           |   CODE   |  QUANTITY |  PRICE MFG.DATE \n");
-    printf("------------------------------------------------------------------\n");
-    for (i = 0; i < items_number; i++)
-        printf("%d     %-15s        %-d          %-5d     %-3f %d/%d/%d \n", i + 1, item[i].name, item[i].code, item[i].qty,
-            item[i].price, item[i].mfg.day, item[i].mfg.month,
-            item[i].mfg.year);
-    printf("-----------------------------------------------------------------\n");
+    printf(" S.N.|      NAME           |    CODE   |  QUANTITY |  PRICE    |     MFG.DATE \n");
+    printf("---------------------------------------------------------------------------\n");
+    for (i = 0; i < item_numbers; i++)
+        printf("%d.     %-15s         %-d        %-5d      %.3f         %d/%d/%d \n", i + 1, item[i].name, item[i].code, item[i].qty,
+               item[i].price, item[i].mfg.day, item[i].mfg.month,
+               item[i].mfg.year);
+    printf("----------------------------------------------------------------------------\n");
 }
 
 #endif

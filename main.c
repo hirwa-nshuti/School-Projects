@@ -6,9 +6,10 @@
 
 int main()
 {
-    int n = 1;
-    struct details *items = initialize_stock(n);
-    display_stock(items, n);
-    available_items(items, n);
+    initialize_stock();
+    available_items();
+    add_items();
+    display_stock();
+    total_cost();
     return 0;
 }
