@@ -12,10 +12,9 @@ void available_items()
     display_stock();
 }
 
-void current_purchases()
+void recent_purchase()
 {
-    printf("\nThe customer named %s bought the following items %d %s:\n\n", customer_name, number, bought.name);
-    item[item_index].qty -= number;
+    printf("\nThe customer named %s bought the following  %d %s items\n\n", customer_name, number, bought.name);
     fflush(stdout);
     available_items();
 }

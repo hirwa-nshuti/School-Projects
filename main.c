@@ -23,6 +23,7 @@ int main()
     {
     case 1:
         printf("\nSuccessfully logged in as the Client.\n");
+        select_items();
         break;
     case 2:
         printf("\nSuccessfully logged in as the Seller.\n");
@@ -34,7 +35,8 @@ int main()
             printf("     2. Add items     \n");
             printf("     3. View total cost     \n");
             printf("     4. View available items     \n");
-            printf("--------------------\n");
+            printf("     5. To view recent purchase     \n");
+            printf("-------------------------------------\n");
             scanf("%d", &seller_choice);
             switch (seller_choice)
             {
@@ -50,13 +52,16 @@ int main()
             case 4:
                 available_items();
                 break;
+            case 5:
+                recent_purchase();
+                break;
             case 0:
                 printf("\nLogging out\n");
                 break;
             default:
                 break;
             }
-        } while (seller_choice <= 4 && seller_choice >= 0);
+        } while (seller_choice <= 5 && seller_choice > 0);
         
         break;
     case 0:

@@ -39,7 +39,8 @@ void select_items()
     printf("Enter how many %-15s items you want: ", bought.name);
     scanf("%d", &number);
     double total_cost = bought.price*number;
-    printf("\nYou have successfully bought %d%-15s items for %.3lf amount\n", number, bought.name, total_cost);
+    printf("\nYou have successfully bought %d %s items for %.3lf amount\n", number, bought.name, total_cost);
+    item[item_index].qty -= number;
 }
 
 
