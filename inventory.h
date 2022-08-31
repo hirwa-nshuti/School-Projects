@@ -1,15 +1,26 @@
+/*
+The inventory library to keep track of our stock by initializing and adding items to the stock.
+Two main functions here:
+-----------------------
+initialize_stock(), The seller has to first initialize items in the stock for them to be available for clients.
+display_stock(), It helps both client and seller to know current items in the stock.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_SIZE 20
 
 #ifndef Inventory
 #define Inventory
+
+// Storing the date information in a structure
 struct date
 {
     int day;
     int month;
     int year;
 };
+
+// Initializing a structure of item details and type defining it to Det.
 typedef struct details
 {
     char name[MAX_SIZE];
@@ -19,14 +30,15 @@ typedef struct details
     struct date mfg;
 } Det;
 
-Det *item;
-int item_numbers;
+Det *item;        // Declaring a pointer that stores array of items.
+int item_numbers; // global value to keep track of items we have in the array.
 void initialize_stock()
 {
     printf("\nEnter the number of items to initialize\n");
     scanf("%d", &item_numbers);
-    item = (Det *)malloc(item_numbers * sizeof(Det));
+    item = (Det *)malloc(item_numbers * sizeof(Det)); // Initializing the size of array of items
     int i;
+    // Getting items to register in the stock.
     for (i = 0; i < item_numbers; i++)
     {
         fflush(stdout);
@@ -48,6 +60,7 @@ void initialize_stock()
     }
 }
 
+// Displaying the stock contents a table showing items in the stock with full details.
 void display_stock()
 {
     int i;
