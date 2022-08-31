@@ -2,14 +2,70 @@
 #include <stdlib.h>
 #include "inventory.h"
 #include "seller.h"
+#include "client.h"
 
 
 int main()
 {
-    initialize_stock();
-    available_items();
-    add_items();
-    display_stock();
-    total_cost();
+    printf("\nWelcome to the Vendicine\n");
+    int main_choice;
+    do
+    {
+
+    
+    printf("\nMenu:\n\n");
+    printf("     1. Client     \n");
+    printf("     2. Seller     \n");
+    printf("     0. Quit     \n");
+    printf("--------------------\n");
+    scanf("%d", &main_choice);
+    switch (main_choice)
+    {
+    case 1:
+        printf("\nSuccessfully logged in as the Client.\n");
+        break;
+    case 2:
+        printf("\nSuccessfully logged in as the Seller.\n");
+        int seller_choice;
+        do
+        {
+            printf("\nSeller's Menu:\n\n");
+            printf("     1. Initialize Stock    \n");
+            printf("     2. Add items     \n");
+            printf("     3. View total cost     \n");
+            printf("     4. View available items     \n");
+            printf("--------------------\n");
+            scanf("%d", &seller_choice);
+            switch (seller_choice)
+            {
+            case 1:
+                initialize_stock();
+                break;
+            case 2:
+                add_items();
+                break;
+            case 3:
+                total_cost();
+                break;
+            case 4:
+                available_items();
+                break;
+            case 0:
+                printf("\nLogging out\n");
+                break;
+            default:
+                break;
+            }
+        } while (seller_choice <= 4 && seller_choice >= 0);
+        
+        break;
+    case 0:
+        printf("\nThank you for using VENDICINE.\n");
+        break;
+    default:
+        break;
+    }
+    } while (main_choice > 0 && main_choice < 3);
+
     return 0;
 }

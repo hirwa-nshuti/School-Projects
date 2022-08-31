@@ -8,14 +8,16 @@
 
 void available_items()
 {
-    printf("\nYour current stock status is:\n");
+    printf("\nYour current stock status is:\n\n");
     display_stock();
 }
 
-void current_purchases(char customer[20])
+void current_purchases()
 {
-    printf("\nThe %s customer bought the following items:\n", customer);
-    display_stock();
+    printf("\nThe customer named %s bought the following items %d %s:\n\n", customer_name, number, bought.name);
+    item[item_index].qty -= number;
+    fflush(stdout);
+    available_items();
 }
 
 void add_items()
