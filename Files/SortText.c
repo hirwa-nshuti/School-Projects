@@ -41,7 +41,7 @@ void main()
 				stud[j + 1] = temp;
 			}
 	printf("Writting sorted Data to a text file.....\n");
-	fp = fopen("studsorted.txt", "w");
+	fp = fopen("SortedData.txt", "w");
 	for (i = 0; i < size; i++)
 		fprintf(fp, "%s %d \n", stud[i].name, stud[i].rollno);
 	printf("\nThe file is sorted successfully and saved as SortedData.txt. \n \n");
