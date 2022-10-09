@@ -1,11 +1,12 @@
 # Prerequisites
 *.d
-
+*.txt
 # Object files
 *.o
 *.ko
 *.obj
 *.elf
+*.out
 
 # Linker output
 *.ilk
