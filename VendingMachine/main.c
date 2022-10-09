@@ -17,7 +17,7 @@ before performing any other operation and do other operatations accordingly with
 
 int main()
 {
-    printf("\nWelcome to the Vendicine\n");
+    printf("\nWelcome to the Vending Machine\n");
     int main_choice;
     do
     {
