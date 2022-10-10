@@ -18,7 +18,7 @@ void insert()
   scanf("%[^\n]%*c", temp);
   printf("\nEnter the song duration: ");
   scanf("%u", &song_time);
-  Song *new_node = (struct node *)malloc(sizeof(struct node)); // Allocate memory for new node
+  Song *new_node = (Song *)malloc(sizeof(Song)); // Allocate memory for new node
   strcpy(new_node->song, temp);
   new_node->song_time = song_time;
   // Adding the new node to current node
