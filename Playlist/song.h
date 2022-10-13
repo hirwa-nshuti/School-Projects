@@ -23,7 +23,7 @@ typedef struct node
 
 char temp[MAX_SIZE];
 unsigned int song_time;
-struct node *head;
+Song *head;
 Song *current_node;
 int song_count;
 
@@ -53,7 +53,6 @@ void display()
     i++;
     display_ptr = display_ptr->next;
     } while (display_ptr != head);
-    free(display_ptr);
 };
 
 // Counting the number of songs available in the playlist.
