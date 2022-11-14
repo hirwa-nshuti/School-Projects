@@ -22,3 +22,9 @@ Used file operations to read data from `.txt` file and sort the data. After then
 ----------------------------
 
 Simulation of how music player app works using a linke list where we can add songs to the playlist play them, and delete them.
+
+* ## [StoreManager](./StoreManager/)
+
+------------------------------------
+
+Using BST to manager store items
